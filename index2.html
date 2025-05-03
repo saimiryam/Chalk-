@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>מתג סודי</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .switch-container {
+            margin-top: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: gray;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 40px;
+            width: 40px;
+            left: 5px;
+            bottom: 5px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: deeppink;
+        }
+        input:checked + .slider:before {
+            transform: translateX(50px);
+        }
+        #message {
+            display: none;
+            font-size: 2.5em;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" onclick="showMessage()">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div id="message">😈 תסתמי את הפה שלך</div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
